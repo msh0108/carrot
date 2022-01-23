@@ -6,7 +6,7 @@ function Info() {
   return (
     <div className="main">
       <img src={MainLogo} className="main-logo" />
-      <div className="main-text">informaiton page</div>
+      <div className="main-text">informaiton</div>
     </div>
   );
 }
