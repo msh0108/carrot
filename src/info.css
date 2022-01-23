@@ -41,28 +41,80 @@
 
 
   /* 은비 */
-.main{
+.informaion{
     position: absolute;
-    top:10px;
-    background-color: #61dafb;
     width: 100%;
-    height: 20px;
-    vertical-align: center;
-
+    height: 100%;
+}
+.info{
+    position:inherit;
+    top:256px;
+    width: 1440px;
+    height: 612px ;
+    background-color: rgba(238, 106, 84, 0.18)
+}
+.info_title {
+    
+    margin-left: 87px;
+    margin-top:40px;
+    font-size: 18px;
 }
 
-  .main-logo{
+.info_box{
+    margin-left: 96px;
+    top:384px;
+    width: 1240px;
+    height: 414px;
+    background-color: white;
+}
+.info_box_area{
     float: left;
-    height: inherit;
-    
-  }
-  
+    width: 595px;
+    height: 414px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+.info_box_keyword{
+    float: right;
+    width: 595px;
+    height: 414px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
 
-  .main-text{
-      float: left;
-      font-size: 10px;
-      height: inherit;
-      text-align:center;
-      line-height: 250%;
-      
-  }
+/* 동네가게 */
+.store{
+    position:inherit;
+    top:1160px;
+    width: 1440px;
+    height: 800px ;
+    background-color: rgba(255, 239, 207, 0.55)
+}
+.store_title {
+    
+    margin-left: 87px;
+    margin-top:40px;
+    font-size: 18px;
+}
+
+.store_box{
+    margin-left: 96px;
+    top:384px;
+    width: 1240px;
+    height: 580px;
+    background-color: white;
+}
+.store_box_area{
+    float: left;
+    width: 130px;
+    height: 580px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+.store_box_keyword{
+    float: right;
+    width: 1050px;
+    height: 580px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
