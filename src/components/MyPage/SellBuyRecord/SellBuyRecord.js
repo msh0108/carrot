@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import ProductGrid from "./ProductGrid";
+import ProductGrid from "../ProductGrid";
 import SectionLabel from "./SectionLabel";
 
 function SellBuyRecord() {
