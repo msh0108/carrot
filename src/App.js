@@ -2,8 +2,10 @@ import React from 'react';
 import { useState } from "react";
 import styled from "styled-components";
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
+
 import Top from "./component/common/Top";
 import Bottom from "./component/common/Bottom";
+import Modal from "./component/common/Modal";
 import Talk from "./component/common/Talk";
 import Talk2 from "./component/common/Talk2";
 import Talk3 from "./component/common/Talk3";
@@ -13,7 +15,11 @@ import './App.css';
 
 function App() {
   return (
-    <Top />
+    <body>
+      <Top />
+    <Talk2 />
+    <Bottom/>
+    </body>
   );
 }
 

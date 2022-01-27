@@ -1,0 +1,195 @@
+import React, { component } from 'react';
+import { useState } from "react";
+import { BrowserRouter, Link, Router } from "react-router-dom";
+import styled from "styled-components";
+
+export const Modal = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const handleModal = () => {
+      setIsOpen(!isOpen)
+    };
+
+    return (
+        <>
+        <ModalContainer>
+        <ModalBtn onClick={handleModal}>
+        {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" />}
+        </ModalBtn>
+    
+        {isOpen ===false ?
+          null
+        : <ModalBackdrop>
+        <ModalView>
+          <div className="close_btn" onClick={handleModal}>&times;</div>
+          <Talk_about>
+               <h1>채팅</h1>
+               <Talk_search_box>
+                 <a className="talk-search-btn" href="#">
+                      <i className="fas fa-search"></i>
+                  </a> 
+                  <input type="text" className="talk-search-txt" name=""placeholder="Search" />
+               </Talk_search_box>
+                <ul>
+                    <li>
+                        <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
+                        <div className="talk_room">
+                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
+                        </div>
+                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
+                    </li>
+                    <li>
+                        <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
+                        <div className="talk_room">
+                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
+                        </div>
+                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
+                    </li>
+                    <li>
+                        <img src="img/talkuser.png" alt="talk_user" className="talk_user"  />
+                        <div className="talk_room">
+                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
+                        </div>
+                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
+                    </li>
+                </ul>
+            </Talk_about>
+        </ModalView>
+      </ModalBackdrop>
+        }
+    
+        </ModalContainer>
+        </>
+      );
+    };
+
+const ModalBtn = styled.div`
+  background-color: none;
+  text-decoration: none;
+  border: none;
+  padding: 20px;
+  color: white;
+  border-radius: 30px;
+  cursor: grab;
+  position:fixed;
+  right:10%;
+  bottom:6%;
+`;
+const ModalContainer = styled.div`
+  
+  position:relative;
+  ul,li{
+    list-style:none; 
+    float:left; 
+    margin:0; 
+    padding:0;
+  }
+  `;
+  const ModalBackdrop = styled.div`
+  position:absolute;
+  top:-600px;
+  right:20px;
+  border:1px solid blue;
+  `;
+  const ModalView = styled.div`
+  .close_btn{
+      border:1px solid red;
+      position:absolute;
+      right:10px;
+      cursor:pointer;
+  }
+  `;
+  const Talk_about = styled.div`
+  clear:both;
+  width:358px;
+  height:460px;
+  border:1px solid #ff772b;
+  border-radius:20px;
+  padding:17px;
+  padding-top:18px;
+  box-sizing:border-box;
+  background-color:#fff;
+  h1{
+    font-size:22px;
+    margin-bottom:10px;
+}
+ul{
+    float:left;
+    margin-top:15px;
+}
+ul li{
+    float:left;
+    margin-bottom:10px;   
+}
+ul li img, .talk_room{
+    float:left;   
+}
+.talk_room{
+    margin-top:2px;
+    margin-left:10px;
+    width:229px;
+    border:1px solid red;
+}
+.talk_room h2{
+    font-size:14px;
+    border:1px solid blue;
+    margin-top:0;
+}
+.talk_room p{
+    clear:both;
+    margin-top:2px;
+    font-size:13px;
+    border:1px solid blue;
+}
+.talk_user{
+    border:1px solid black;
+    border-radius:100%;
+    width:40px;
+}
+.talk_bell{
+    width:25px;
+    height:25px;
+    margin-top:7px;
+    
+}
+
+  `;
+  const Talk_search_box = styled.div`
+  padding: 5px;
+  height: 20px;
+  background-color: #e5e5e5;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  width: 300px;
+  .talk-search-btn{
+    border:1px solid red;
+    text-decoration: none;
+    float: right;
+    width: 30px;
+    height: 10px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #b4b9be;
+    font-size:16px;
+      margin-top:5px;
+  }
+  .talk-search-txt{
+    border:1px solid red;
+    display: flex;
+    width: 250px;
+    padding: 0 6px;
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  `;
+
+  
+export default Modal;

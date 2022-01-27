@@ -7,7 +7,7 @@ function Top() {
   return (
   <BrowserRouter>
   <Body>
-   <header>
+   <Header>
      <Top_head>
         <Link to = "/">
           <img src="img/main_logo.png" alt="메인로고" className='mainlogo' />
@@ -29,7 +29,7 @@ function Top() {
             </ul>
         </Top_menu>
      </Top_head>
-   </header> 
+   </Header> 
   </Body>
   </BrowserRouter>
   );
@@ -42,16 +42,17 @@ const Body = styled.body`
   min-width:1920px;
   font-family:'Nanum Gothic', sans-serif; 
   color:#333333;
-header{
-  height:100px;
-  border-bottom:1px solid #b4b9be;
-}
 ul,li{
   list-style:none; 
   float:left; 
   margin:0; 
   padding:0;
 }
+`;
+const Header = styled.header`
+  height:100px;
+  border-bottom:1px solid #b4b9be;
+  }
 `;
 const Top_head = styled.div`
   position:relative;
