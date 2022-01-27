@@ -1,7 +1,11 @@
 import React, { component } from 'react';
 import { useState } from "react";
-import { BrowserRouter, Link, Router } from "react-router-dom";
+import { BrowserRouter, Link, Routes ,Route , Router } from "react-router-dom";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+import Talk3 from "./Talk3";
 
 export const Modal = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,25 +16,29 @@ export const Modal = () => {
 
     return (
         <>
+        
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
-        {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" />}
+        {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" className='talk_logo' />}
         </ModalBtn>
     
         {isOpen ===false ?
           null
         : <ModalBackdrop>
         <ModalView>
+        <BrowserRouter>
           <div className="close_btn" onClick={handleModal}>&times;</div>
           <Talk_about>
                <h1>채팅</h1>
                <Talk_search_box>
                  <a className="talk-search-btn" href="#">
-                      <i className="fas fa-search"></i>
+                 <FontAwesomeIcon icon={faSearch} className="search" />
                   </a> 
                   <input type="text" className="talk-search-txt" name=""placeholder="Search" />
+                  
                </Talk_search_box>
                 <ul>
+                <Link to="/">
                     <li>
                         <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
                         <div className="talk_room">
@@ -38,6 +46,8 @@ export const Modal = () => {
                         </div>
                         <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
                     </li>
+                    </Link>
+                    <Link to="talk2">
                     <li>
                         <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
                         <div className="talk_room">
@@ -45,6 +55,8 @@ export const Modal = () => {
                         </div>
                         <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
                     </li>
+                    </Link>
+                    <Link to="talk3">
                     <li>
                         <img src="img/talkuser.png" alt="talk_user" className="talk_user"  />
                         <div className="talk_room">
@@ -52,13 +64,21 @@ export const Modal = () => {
                         </div>
                         <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
                     </li>
+                    </Link>
                 </ul>
+        <Routes>
+        <Route path="/" element={<Talk3 />} />
+        <Route path="talk2" element={<Talk3 />} />
+        <Route path="talk3" element={<Talk3 />} />
+        </Routes>
             </Talk_about>
+            </BrowserRouter>
         </ModalView>
       </ModalBackdrop>
         }
     
         </ModalContainer>
+        
         </>
       );
     };
@@ -74,9 +94,13 @@ const ModalBtn = styled.div`
   position:fixed;
   right:10%;
   bottom:6%;
+  .talk_logo{
+      position:absolute;
+      top:-500px;
+      right:10%;
+  }
 `;
 const ModalContainer = styled.div`
-  
   position:relative;
   ul,li{
     list-style:none; 
@@ -87,16 +111,20 @@ const ModalContainer = styled.div`
   `;
   const ModalBackdrop = styled.div`
   position:absolute;
-  top:-600px;
+  bottom:0px;
   right:20px;
-  border:1px solid blue;
   `;
   const ModalView = styled.div`
   .close_btn{
-      border:1px solid red;
       position:absolute;
-      right:10px;
+      right:30px;
+      top:25px;
       cursor:pointer;
+      padding:5px;
+  }
+  .close_btn:hover{
+    transition: all 1s;
+    filter:brightness(250%);
   }
   `;
   const Talk_about = styled.div`
@@ -128,18 +156,17 @@ ul li img, .talk_room{
     margin-top:2px;
     margin-left:10px;
     width:229px;
-    border:1px solid red;
 }
 .talk_room h2{
     font-size:14px;
-    border:1px solid blue;
     margin-top:0;
+    margin-bottom:0;
 }
 .talk_room p{
     clear:both;
-    margin-top:2px;
+    margin-top:0;
     font-size:13px;
-    border:1px solid blue;
+    padding:none;
 }
 .talk_user{
     border:1px solid black;
@@ -162,7 +189,6 @@ ul li img, .talk_room{
   border-radius: 20px;
   width: 300px;
   .talk-search-btn{
-    border:1px solid red;
     text-decoration: none;
     float: right;
     width: 30px;
@@ -177,7 +203,6 @@ ul li img, .talk_room{
       margin-top:5px;
   }
   .talk-search-txt{
-    border:1px solid red;
     display: flex;
     width: 250px;
     padding: 0 6px;
