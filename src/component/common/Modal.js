@@ -4,7 +4,6 @@ import { BrowserRouter, Link, Routes ,Route , Router } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
 import Modal2 from "./Modal2";
 
 export const Modal = () => {
@@ -16,7 +15,7 @@ export const Modal = () => {
 
     return (
         <>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
         {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" className='talk_logo' />}
@@ -78,7 +77,7 @@ export const Modal = () => {
         }
     
         </ModalContainer>
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
         </>
       );
     };
@@ -90,7 +89,7 @@ const ModalBtn = styled.div`
   padding: 20px;
   color: white;
   border-radius: 30px;
-  cursor: grab;
+  cursor: pointer;
   position:fixed;
   right:10%;
   bottom:6%;
@@ -101,6 +100,7 @@ const ModalBtn = styled.div`
   }
 `;
 const ModalContainer = styled.div`
+
   position:relative;
   ul,li{
     list-style:none; 

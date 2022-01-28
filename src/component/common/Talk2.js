@@ -11,7 +11,7 @@ function Talk2() {
     <Body>
         <Section>
             <Talk_plus2>
-                <Modal />
+                <Modal2 />
             </Talk_plus2>
         </Section>
     </Body>

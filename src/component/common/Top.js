@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Router } from "react-router-dom";
 import styled from "styled-components";
-
+import Bell from "./Bell";
 
 function Top() {
   return (
@@ -25,7 +25,7 @@ function Top() {
                 <li><Link className='menus' to = "/">인기매물</Link></li>
                 <li><Link className='menus' to = "/">동네정보</Link></li>
                 <li><Link className='menus' to = "/"><img src="img/account.png" alt="계정" /> 나의당근</Link></li>
-                <li><Link className='menus' to = "/"><img src="img/bell.png" alt="알람" /> 알림</Link></li>   
+                <li><Link className='menus' to = "/"><Bell /> 알림</Link></li>   
             </ul>
         </Top_menu>
      </Top_head>
@@ -137,9 +137,6 @@ ul li img{
 .menus{
   text-decoration:none;
   color:#000;
-}
-.menus img{
-  
 }
 `;
 
