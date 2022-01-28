@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import Top from "./component/common/Top";
 import Bottom from "./component/common/Bottom";
 import Modal from "./component/common/Modal";
+import Modal2 from "./component/common/Modal2";
 import Talk from "./component/common/Talk";
 import Talk2 from "./component/common/Talk2";
 import Talk3 from "./component/common/Talk3";

@@ -5,9 +5,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import Modal2 from "./Modal2";
 
-export const Modal = () => {
+export const Modal2 = () => {
     const [isOpen, setIsOpen] = useState(false);
   
     const handleModal = () => {
@@ -16,7 +15,7 @@ export const Modal = () => {
 
     return (
         <>
-        <BrowserRouter>
+        
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
         {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" className='talk_logo' />}
@@ -29,48 +28,32 @@ export const Modal = () => {
         
           <div className="close_btn" onClick={handleModal}>&times;</div>
           <Talk_about>
-               <h1>채팅</h1>
-               <Talk_search_box>
-                 <a className="talk-search-btn" href="#">
-                 <FontAwesomeIcon icon={faSearch} className="search" />
-                  </a> 
-                  <input type="text" className="talk-search-txt" name=""placeholder="Search" />
-                  
-               </Talk_search_box>
-                <ul>
-                <Link to="/">
-                    <li>
-                        <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
-                        <div className="talk_room">
-                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
+          <div className="talk3_top">
+                   <img src="img/leftarrow.png" alt="before" className="before" />
+                   <div className="talk_name">
+                    <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
+                            <h1>당근이</h1>
                         </div>
-                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
-                    </li>
-                    </Link>
-                    <Link to="talk2">
-                    <li>
-                        <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
-                        <div className="talk_room">
-                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
-                        </div>
-                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
-                    </li>
-                    </Link>
-                    <Link to="talk3">
-                    <li>
-                        <img src="img/talkuser.png" alt="talk_user" className="talk_user"  />
-                        <div className="talk_room">
-                        <h2>당근이</h2><p>우리 동네 '신촌'을 인증하고 근처...</p>
-                        </div>
-                        <img src="img/talkbellIcon.png" alt="talkbell" className="talk_bell" />
-                    </li>
-                    </Link>
-                </ul>
-        <Routes>
-        <Route path="/" element={<Modal2 />} />
-        <Route path="talk2" element={<Modal2 />} />
-        <Route path="talk3" element={<Modal2 />} />
-        </Routes>
+                </div>
+                <div className="talk3_section">
+                <div className="talk3_send">
+                   <p>오후 3:14</p>
+                    <p>안녕하세요!</p>
+                </div>
+                <div className="talk3_reply">
+                   <img src="img/talkuser.png" alt="talk_user" className="talk_user" />
+                    <p>안녕하세요.</p>
+                    <p>오후 3:14</p>                    
+                </div>
+                </div>
+                <div className="talk3_bottom">
+                   <div className="talk3_message">
+                    <textarea placeholder="메시지를 입력해주세요." className="talk3_txt"></textarea>
+                        <img src="img/picture.png" alt="" />
+                        <img src="img/emoji.png" alt="" />
+                        <img src="img/paperclip.png" alt="" />
+                    </div>
+                </div>
             </Talk_about>
             
         </ModalView>
@@ -78,7 +61,7 @@ export const Modal = () => {
         }
     
         </ModalContainer>
-        </BrowserRouter>
+        
         </>
       );
     };
@@ -200,7 +183,7 @@ ul li img, .talk_room{
     align-items: center;
     color: #b4b9be;
     font-size:16px;
-    margin-top:5px;
+      margin-top:5px;
   }
   .talk-search-txt{
     display: flex;
@@ -217,4 +200,4 @@ ul li img, .talk_room{
   `;
 
   
-export default Modal;
+export default Modal2;
