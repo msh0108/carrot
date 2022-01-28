@@ -3,21 +3,17 @@ import styled from "styled-components";
 
 // 내부
 
-import QnAnswer from "./QnAnswer";
+import FAQContentBox from "./FAQContentBox";
 import HelpBox from "./HelpBox";
 
 function FAQ() {
   return (
-    <>
+    <div>
       <QnAWrapping>
-        <h3 className="title">마이페이지</h3>
-        <QnASubTitleBox>
-          <div className="subTitle">자주 묻는 질문</div>
-        </QnASubTitleBox>
-        <QnAnswer />
+        <FAQContentBox />
         <HelpBox />
       </QnAWrapping>
-    </>
+    </div>
   );
 }
 
@@ -31,24 +27,5 @@ const QnAWrapping = styled.div`
     text-align: left;
     font-weight: bold;
     font-size: 3.5vh;
-  }
-`;
-
-const QnASubTitleBox = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  padding: 25px 0;
-  border-top: 1px solid #c4c4c4;
-  border-bottom: 1px solid #c4c4c4;
-  .subTitle {
-    margin: 0 auto;
-    width: 25%;
-    padding: 10px;
-    color: #fff;
-    font-size: 2.3vh;
-    font-weight: 600;
-    background-color: #f04124;
-    border-radius: 10px;
-    border: 1px solid #f04124;
   }
 `;

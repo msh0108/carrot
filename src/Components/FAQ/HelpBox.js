@@ -16,9 +16,10 @@ export default HelpBox;
 
 const HelpBoxWrap = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   height: 15vh;
   background-color: #eee;
+  text-align: center;
   p {
     font-size: 1.8vh;
     font-weight: bold;
