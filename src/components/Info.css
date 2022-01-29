@@ -1,0 +1,258 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+
+  /* 은비 */
+  
+  /* 동네정보 */
+.informaion{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 500px;
+}
+.info{
+    position:inherit;
+    top:256px;
+    width: 1440px;
+    height: 1212px ;
+    margin: 0 auto;
+    background-color: rgba(238, 106, 84, 0.18)
+}
+.info-title {
+    
+    margin-left: 87px;
+    margin-top:40px;
+    width: 1000px;
+    border: 1px solid red;
+}
+.info-title h1{
+font-size: 2.8em;
+}
+.info-title-text{
+  display: block;
+  width: 200px;
+}
+.info-pagenumber{
+  position: absolute;
+  top:1400px;
+  left: 600px;
+}
+
+.info-search{
+  display: block;
+  top:50px;
+  margin-left:450px;
+  padding:3px 15px;
+  width:500px;
+  height: 30px;;
+  border: 1px solid gray;
+
+} 
+
+.info-box{
+    padding: 30px;
+    margin-left: 80px;
+    margin-top:40px;
+    width: 300px;height: 360px;
+    float: left;
+    margin-right: 20px;
+    text-align: left;
+    background-color :white
+
+}
+.info-button{
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10px;
+  background-color: #E0DFDF;
+  
+}
+.info-box img{
+  width:270px;
+  height: 100px;;
+}
+.info-box p{
+  margin-top: 80px;
+  
+}
+.info-box p span{
+  text-decoration: underline;
+}
+
+
+
+
+.info-last a{
+  text-decoration: none;
+}
+.info-last a:hover{
+  text-decoration: underline;
+  color: #F04124;
+}
+.info-last a:active{
+  color: #F04124;
+}
+.info-last a:visited{
+  color: black;
+}
+
+.info-last img{
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.info-box-area{
+    float: left;
+    width: 595px;
+    height: 414px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+
+
+/* 동네가게 */
+.store-text{
+  text-align: center;
+  position:inherit;
+  top: 1600px;
+  width: 1440px;
+}
+.store-text h1{
+  font-size: 2.8em;
+}
+.store-text h4{
+  font-size: 1.5em;
+}
+.store-text-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 470px;
+  width: 520px;
+  height: 70px;;
+  border-radius: 40px;
+  background-color: #f04324d2;
+  color: white;
+}
+.store-text h3{
+  font-size: 1.8em;
+}
+
+
+
+
+.store{
+    position:inherit;
+    top:2160px;
+    width: 1440px;
+    height: 1000px ;
+    background-color: rgba(255, 239, 207, 0.55)
+}
+
+
+.store-title {
+  margin-left: 87px;
+  margin-top:40px;
+  width: 1440px;
+}
+.store-title h1{
+  font-size: 2.8em;
+}
+.store-title ul{
+  margin: 0 ;
+}
+.store-title li{
+  list-style-type: none;
+  padding: 5px 20px;
+  float: left;
+  border-right: 1px solid black;
+}
+
+.store-title a{
+  text-decoration: none;
+}
+.store-title a:hover{
+  text-decoration: underline;
+  color: #F04124;
+}
+.store-title a:active{
+  color: #F04124;
+}
+.store-title a:visited{
+  color: black;
+}
+
+.store-list{
+  position: inherit;
+  top:250px;
+  left: 140px;
+  list-style-type: none;
+}
+.store-list-detail{
+  background-color: #fff;
+  float: left;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+.store-list-detail img{
+  width:200px;
+  height: 100px;;
+}
+.store-list-detail h4{
+  color: rgb(18, 116, 90);
+}
+.store-list-detail p{
+  font-size: 0.8em;
+  color: rgb(145, 143, 143);
+}
+.store-list-last:after {content:""; display:block; clear:both;}
+
+.store-list-last{
+  position: inherit;
+  padding: 20px;
+  top: 900px;
+  left: 550px;;
+  background-color: #E0DFDF;
+}
