@@ -13,7 +13,7 @@ export const Modal2 = () => {
 
     return (
         <>
-        
+        <Body>
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
         {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" />  : <img src="img/talk2.png" alt="당근채팅2" className='talk_logo' />}
@@ -59,11 +59,18 @@ export const Modal2 = () => {
         }
     
         </ModalContainer>
-        
+        </Body>
         </>
       );
     };
 
+const Body = styled.body`  
+position:relative;
+position:fixed;
+  right:10%;
+  bottom:6%;
+  z-index:50;      
+      `;
 const ModalBtn = styled.div`
   background-color: none;
   text-decoration: none;

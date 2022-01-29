@@ -10,9 +10,9 @@ function Talk2() {
     <BrowserRouter>
     <Body>
         <Section>
-            <Talk_plus2>
+            {/* <Talk_plus2> */}
                 <Modal2 />
-            </Talk_plus2>
+            {/* </Talk_plus2> */}
         </Section>
     </Body>
     </BrowserRouter>

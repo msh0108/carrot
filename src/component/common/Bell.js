@@ -47,24 +47,21 @@ const ModalBtn = styled.div`
   background-color: none;
   text-decoration: none;
   border: none;
-   display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+   justify-content: center;
+   align-items: center;
     float:left;
     
     margin-right:5px;
   color: white;
   border-radius: 30px;
   cursor: pointer;
-  .talk_logo{
-      position:absolute;
-      top:-500px;
-      right:10%;
-  }
+  
 `;
 const ModalContainer = styled.div`
   position:relative;
-  margin-top:33px;
+  // margin-top:33px;
+
   
 
   `;
@@ -145,6 +142,7 @@ const ModalContainer = styled.div`
         float: left;
         margin-top:15px;
         height:54px;
+        border:1px solid red;
         
         
     }

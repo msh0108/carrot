@@ -22,10 +22,10 @@ function Top() {
         </Top_search>
         <Top_menu>
            <ul>
-                <li><Link className='menus' to = "/">인기매물</Link></li>
-                <li><Link className='menus' to = "/">동네정보</Link></li>
-                <li><Link className='menus' to = "/"><img src="img/account.png" alt="계정" /> 나의당근</Link></li>
-                <li><Link className='menus' to = "/"><Bell /> 알림</Link></li>   
+                <li className='menus'><Link to = "/">인기매물</Link></li>
+                <li className='menus'><Link to = "/">동네정보</Link></li>
+                <li className='menus'><Link to = "/"><img src="img/account.png" alt="계정" className='My' /> 나의당근</Link></li>
+                <li className='menus'><Link to = "/"><Bell /> 알림</Link></li>   
             </ul>
         </Top_menu>
      </Top_head>
@@ -108,12 +108,21 @@ const Top_menu = styled.div`
     height:100px;
     position:absolute;
     right:10px;
-
+    display:flex;
+    align-items:center;
+    justify-content: center;
+ul{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  
+}
 ul li{
+    display:flex;
+    align-items:center;
+    justify-content: center;
     box-sizing: border-box;
-    height:100px;
-    line-height:100%;
-    line-height: 95px;
+    // height:100px;
     font-size:17px;
     margin-left:10px;
     position:relative;
@@ -121,24 +130,29 @@ ul li{
     color:black;
     
 }
-ul li::after{
+.menus::after{
   content: "|";
   margin-left:10px;
 }
-ul li:last-child::after{
+.menus:last-child::after{
   content:""
 }
-ul li :hover{
+.menus :hover{
   color:#b4b9be;
 }
-ul li img{
-  margin-top:0px;
+.My{
+  float:left;
+  margin-right:5px;
 }
-.menus{
-  text-decoration:none;
-  color:#000;
-}
+ .menus{
+   text-decoration:none;
+   color:#000;
+ }
 `;
+const Link = styled.link`
+ text-decoration:none;
+   color:#000;
+`
 
 export default Top;
 
