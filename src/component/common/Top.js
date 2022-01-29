@@ -21,11 +21,11 @@ function Top() {
             </div>
         </Top_search>
         <Top_menu>
-           <ul>
-                <li className='menus'><Link to = "/">인기매물</Link></li>
-                <li className='menus'><Link to = "/">동네정보</Link></li>
-                <li className='menus'><Link to = "/"><img src="img/account.png" alt="계정" className='My' /> 나의당근</Link></li>
-                <li className='menus'><Link to = "/"><Bell /> 알림</Link></li>   
+           <ul className='menu_list'>
+                <li className='menus'><Link to = "/" className='line'><h2>인기매물</h2></Link></li>
+                <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
+                <li className='menus'><Link to = "/" className='line'><img src="img/account.png" alt="계정" className='My' /> <h2>나의당근</h2></Link></li>
+                <li className='menus'><Link to = "/" className='line'><Bell /> <h2>알림</h2></Link></li>   
             </ul>
         </Top_menu>
      </Top_head>
@@ -45,8 +45,6 @@ const Body = styled.body`
 ul,li{
   list-style:none; 
   float:left; 
-  margin:0; 
-  padding:0;
 }
 `;
 const Header = styled.header`
@@ -95,7 +93,7 @@ const Top_search = styled.div`
 .search-txt{
   display: flex;
   width: 280px;
-  padding: 0 6px;
+  padding:0 6px;
   border:none;
   background: none;
   outline: none;
@@ -105,54 +103,54 @@ const Top_search = styled.div`
 }
 `;
 const Top_menu = styled.div`
-    height:100px;
-    position:absolute;
-    right:10px;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-ul{
+height:100px;
+position:absolute;
+right:10px;
+display:flex;
+align-items:center;
+justify-content: center;
+
+.menu_list{
+ display:flex;
+ align-items:center;
+ justify-content: center;
+}
+ .menus{
   display:flex;
   align-items:center;
   justify-content: center;
-  
-}
-ul li{
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    box-sizing: border-box;
-    // height:100px;
+  box-sizing: border-box;
     font-size:17px;
     margin-left:10px;
     position:relative;
     text-decotaion:none;
     color:black;
-    
-}
-.menus::after{
+ }
+ .menus h2{
+   font-size:18px;
+   font-weight:normal;
+   float:left;
+ }
+ .menus::after{
   content: "|";
   margin-left:10px;
 }
 .menus:last-child::after{
   content:""
 }
-.menus :hover{
+.menus h2:hover{
   color:#b4b9be;
 }
 .My{
   float:left;
   margin-right:5px;
+  margin-top:15px;
 }
- .menus{
-   text-decoration:none;
-   color:#000;
+ .line{
+  text-decoration:none;
+  color:#000;
  }
 `;
-const Link = styled.link`
- text-decoration:none;
-   color:#000;
-`
 
 export default Top;
 

@@ -5,26 +5,39 @@ import Modal2 from "../common/Modal2";
 
 function Mypost() {
     return (
+    <BrowserRouter>
     <Body>
       <Section>
+        <Modal2 />
+      <Link to="/" className='inner'>
       <h1>마이페이지</h1>
+      </Link>
         <div class="mypost_main">
+        <Link to="/" className='inner'>
             <h1>내 작성글 보기</h1>
+        </Link>
         </div>
+        <Link to="/" className='inner'>
         <div class="post1 post">
             <h2>기타</h2>
             <p>립밤 추천해주세요 ㅠㅠ 요즘 건조하기도 하고 해서 입술이 너무 갈라지네요</p>
         </div>
+        </Link>
+        <Link to="/" className='inner'>
         <div class="post2 post">
             <h2>기타</h2>
             <p>립밤 추천해주세요 ㅠㅠ 요즘 건조하기도 하고 해서 입술이 너무 갈라지네요</p>
         </div>
+        </Link>
+        <Link to="/" className='inner'>
         <div class="post3 post">
             <h2>기타</h2>
             <p><span>Q.</span>증명사진 잘 찍는곳 있나요? 럭키 아파트나 하나아파트 쪽으로요! 둘리아파트에 있는 삼양스튜디오는 너무 별로더라구요ㅠㅠ추천부탁드려용!</p>
-        </div>     
+        </div>
+        </Link>     
       </Section>
     </Body>
+    </BrowserRouter>
     );
   }
   
@@ -34,7 +47,7 @@ function Mypost() {
     background-color: #fff;
     min-width:1920px;
     font-family:'Nanum Gothic', sans-serif; 
-    color:#333333;
+    
 
   ul,li{
     list-style:none; 
@@ -51,6 +64,11 @@ function Mypost() {
   h1{
     font-size:20px;
     margin:20px 0;
+    text-decoration: none;
+}
+.inner{
+  text-decoration:none;
+  color:#333333;
 }
 .mypost_main{
   border-top:1px solid #dddddd;

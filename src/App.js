@@ -18,7 +18,7 @@ function App() {
   return (
     <body>
       <Top />
-    <Talk2 />
+    <Mypost />
     <Bottom/>
     </body>
   );
