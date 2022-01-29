@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import TownInfo from './pages/TownInfo';
 
 function App() {
   return (
-    <div className="App">
+    <div className="TownInfo">
       
     </div>
   );
 }
 
-export default App;
+export default TownInfo;
