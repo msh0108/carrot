@@ -227,7 +227,7 @@ export default TownStoreMainpage;
 
 
 const TownStoreMainContainer = styled.div`
-  width:1440px;
+  width:1450px;
   height:2000px;
 
 `;
