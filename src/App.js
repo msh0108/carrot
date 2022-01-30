@@ -1,13 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import TownStoreMainpage from './pages/TownStoreMainpage';
-
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+	return (
+		<>
+		</>
+	);
 }
 
-export default TownStoreMainpage;
+export default App;
