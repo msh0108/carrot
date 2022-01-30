@@ -16,6 +16,7 @@ function SellBuyRecord() {
 	);
 }
 
+
 export default SellBuyRecord;
 
 const StyledSellBuyRecord = styled.div`

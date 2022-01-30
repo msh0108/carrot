@@ -54,7 +54,6 @@ const RegionSelectedBox = styled.div`
 	width: 80%;
 	height: 3rem;
 	color: white;
-	justify-items: center;
 	padding: 0 1.2rem;
 `;
 
@@ -66,7 +65,6 @@ const RegionNotSelectedBox = styled.div`
 	height: 3rem;
 	color: rgb(107, 107, 107);
 	margin: 1rem auto;
-	justify-content: center;
 `;
 
 const IconButton = styled.button`
