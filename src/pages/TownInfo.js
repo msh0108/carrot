@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import React from "react";
-
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
 
 import TownInfoCard from "./TownInfoCard";
 

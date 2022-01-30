@@ -1,9 +1,9 @@
-import {
-	BsChat,
-	BsChatFill,
-	BsEmojiSmile,
-	BsEmojiSmileFill,
-} from "react-icons/bs";
+// import {
+// 	BsChat,
+// 	BsChatFill,
+// 	BsEmojiSmile,
+// 	BsEmojiSmileFill,
+// } from "react-icons/bs";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
