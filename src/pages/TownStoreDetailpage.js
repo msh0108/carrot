@@ -29,7 +29,7 @@ function TownStoreDetailpage() {
             <TownStoreDetailpageTitlebox>
 
               <TownStoreDetailpageRound>
-                프로필사진
+                프로필 사진
               </TownStoreDetailpageRound>
 
               <TownStoreDetailpageTitle>

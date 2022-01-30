@@ -477,7 +477,6 @@ const TownStorePostscriptDetailText = styled.div`
 
 const Nothing = styled.div`
     height : 300px;
-    
 `;
 
 
