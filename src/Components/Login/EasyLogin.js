@@ -2,7 +2,6 @@
 import styled from "styled-components";
 
 // 내부
-import "./login.css";
 
 function EasyLogin() {
   return (
@@ -14,13 +13,19 @@ function EasyLogin() {
       </Title>
       <ul>
         <ImgList>
-          <EasyLoginImg src="../kakaoLogo.png" alt="카카오톡간편가입" />
+          <a href="#">
+            <EasyLoginImg src="../kakaoLogo.png" alt="카카오톡간편가입" />
+          </a>
         </ImgList>
         <ImgList>
-          <EasyLoginImg src="../naverLogo.png" alt="네이버간편가입" />
+          <a href="#">
+            <EasyLoginImg src="../naverLogo.png" alt="네이버간편가입" />
+          </a>
         </ImgList>
         <ImgList>
-          <EasyLoginImg src="../facebookLogo.png" alt="페이스북간편가입" />
+          <a href="#">
+            <EasyLoginImg src="../facebookLogo.png" alt="페이스북간편가입" />
+          </a>
         </ImgList>
       </ul>
     </EasyLoginWrap>
@@ -33,6 +38,11 @@ const EasyLoginWrap = styled.div`
   margin: 0 auto;
   width: 80%;
   padding-top: 20px;
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: conlumn;
+  }
 `;
 const Title = styled.fieldset`
   text-align: center;
@@ -43,5 +53,5 @@ const ImgList = styled.li`
 `;
 const EasyLoginImg = styled.img`
   padding: 1.5vh 3vh;
-  width: 8vh;
+  width: 10vh;
 `;
