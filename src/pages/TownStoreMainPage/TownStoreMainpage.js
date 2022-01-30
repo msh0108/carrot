@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import Abc from '../components/1234.jpeg';
-import Userdefault from '../components/userdefault.svg';
-import TownTop from '../components/TownTop.png';
-import Location from '../components/location.svg';
-import StorePicture1 from '../components/store1.png';
-import StorePicture2 from '../components/store2.png';
-import StorePicture3 from '../components/store3.png';
-import StorePicture4 from '../components/store4.svg';
-import StorePicture5 from '../components/store5.png';
-import StorePicture6 from '../components/store6.png';
-import StorePicture7 from '../components/store7.png';
-import StorePicture8 from '../components/store8.png';
-import PostscriptClick from '../components/PostscriptClick.png';
 
+import Userdefault from '../components/TownStoreMainPage/userdefault.svg';
+import TownTop from '../components/TownStoreMainPage/TownTop.png';
+import Location from '../components/TownStoreMainPage/location.svg';
+import StorePicture1 from '../components/TownStoreMainPage/store1.png';
+import StorePicture2 from '../components/TownStoreMainPage/store2.png';
+import StorePicture3 from '../components/TownStoreMainPage/store3.png';
+import StorePicture4 from '../components/TownStoreMainPage/store4.svg';
+import StorePicture5 from '../components/TownStoreMainPage/store5.png';
+import StorePicture6 from '../components/TownStoreMainPage/store6.png';
+import StorePicture7 from '../components/TownStoreMainPage/store7.png';
+import StorePicture8 from '../components/TownStoreMainPage/store8.png';
+import PostscriptClick from '../components/TownStoreMainPage/PostscriptClick.png';
 
 function TownStoreMainpage() {
     return (

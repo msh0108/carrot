@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import Market from '../components/market.svg';
-import Phone from '../components/phone.svg';
-import Location from '../components/location.svg';
-import Clock from '../components/clock.svg';
-import Mapsample from '../components/mapsample.png';
 
-
-
-
-
+import Market from '../components/TownStoreDetialPage/market.svg';
+import Phone from '../components/TownStoreDetialPage/phone.svg';
+import Location from '../components/TownStoreDetialPage/location.svg';
+import Clock from '../components/TownStoreDetialPage/clock.svg';
+import Mapsample from '../components/TownStoreDetialPage/mapsample.png';
 
 function TownStoreDetailpage() {
 
