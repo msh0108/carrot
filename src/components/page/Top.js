@@ -51,7 +51,6 @@ ul,li{
 const Header = styled.header`
   height:100px;
   border-bottom:1px solid #b4b9be;
-  }
 `;
 const Top_head = styled.div`
   position:relative;
