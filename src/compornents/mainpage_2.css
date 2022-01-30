@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: "Do Hyeon", sans-serif;
+}
+
+.menu {
+  width: auto;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+h5 {
+  padding: 0px 320px;
+  font-size: 35px;
+  margin: 0px;
+}
+
+.menu_ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+  margin: 0px;
+}
+
+.menu_ li {
+  padding: 8px 30px;
+}
+
+.menu_ a {
+  text-decoration-line: none;
+  color: black;
+}
+.menu_ li:hover {
+  background-color: #fdb8d8;
+  border-radius: 4px;
+}
+.icon1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+  margin: 0px;
+}
+.icon2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+  margin: 0px;
+}
+
+.icon3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+  margin: 0px;
+}
+.icon_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.icon_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.icon_3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.icon_1 {
+  padding-left: 0px;
+}
+
+.icon_2 {
+  padding-left: 0px;
+}
+
+.icon_3 {
+  padding-left: 0px;
+}
+
+.icon_1 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 18%;
+}
+
+.icon_2 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 18%;
+}
+
+.icon_3 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 18%;
+}
+.icon_1 li {
+  padding: 8px 30px;
+}
+
+.icon_2 li {
+  padding: 8px 30px;
+}
+
+.icon_3 li {
+  padding: 8px 30px;
+}
+.icon_1 a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.icon_2 a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.icon_3 a {
+  text-decoration-line: none;
+  color: black;
+}
+
+#price {
+  color: red;
+}
+strong {
+  font-size: 23px;
+}
