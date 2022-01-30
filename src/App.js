@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import TownStoreDetailpage from './pages/TownStoreDetailpage';
+import TownStoreMainpage from './pages/TownStoreMainpage';
 
 function App() {
   return (
@@ -10,4 +10,4 @@ function App() {
   );
 }
 
-export default TownStoreDetailpage;
+export default TownStoreMainpage;
