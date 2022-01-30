@@ -7,13 +7,13 @@ import Location from '../components/TownStoreDetialPage/location.svg';
 import Clock from '../components/TownStoreDetialPage/clock.svg';
 import Mapsample from '../components/TownStoreDetialPage/mapsample.png';
 
-function TownStoreDetailpage() {
+function TownStoreDetailPage() {
 
     const [Customer, Customers] = useState(0);
 
 
     return (
-      <TownStoreDetailPage>
+      <TownStoreDetailPageBox>
         <TownStoreDetailpageContainer>
 
           <TownStoreDetailpageimg>
@@ -64,15 +64,15 @@ function TownStoreDetailpage() {
             </MapModal>
           </TownStoreDetailpageTextbox>
         </TownStoreDetailpageContainer>
-      </TownStoreDetailPage>
+      </TownStoreDetailPageBox>
     );
   }
   
-  export default TownStoreDetailpage;
+  export default TownStoreDetailPage;
 
 
 
-  const TownStoreDetailPage = styled.div`
+  const TownStoreDetailPageBox = styled.div`
     width : 100%;
     height : 100%;
     background-color : rgba(238, 106, 84, 0.18);
