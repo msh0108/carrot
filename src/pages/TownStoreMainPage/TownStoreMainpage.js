@@ -14,6 +14,7 @@ import StorePicture7 from '../components/TownStoreMainPage/store7.png';
 import StorePicture8 from '../components/TownStoreMainPage/store8.png';
 import PostscriptClick from '../components/TownStoreMainPage/PostscriptClick.png';
 
+
 function TownStoreMainPage() {
     return (
       <TownStoreMainContainer>

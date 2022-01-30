@@ -7,6 +7,7 @@ import Location from '../components/TownStoreDetialPage/location.svg';
 import Clock from '../components/TownStoreDetialPage/clock.svg';
 import Mapsample from '../components/TownStoreDetialPage/mapsample.png';
 
+
 function TownStoreDetailPage() {
 
     const [Customer, Customers] = useState(0);
