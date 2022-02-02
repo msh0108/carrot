@@ -1,11 +1,11 @@
 import SignPage from "./pages/SignPage";
 
 function App() {
-    return (
-		<>
-			<SignPage />
-        </>
-    );
+  return (
+    <>
+      <SignPage />
+    </>
+  );
 }
 
 export default App;
