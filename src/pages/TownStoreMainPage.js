@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import styled from "styled-components";
 
 import Userdefault from '../components/TownStoreMainPage/userdefault.svg';
 import TownTop from '../components/TownStoreMainPage/TownTop.png';
-import Location from '../components/TownStoreMainPage/location.svg';
+import Location from '../components/TownStoreDetailPage/Location.svg';
 import StorePicture1 from '../components/TownStoreMainPage/store1.png';
 import StorePicture2 from '../components/TownStoreMainPage/store2.png';
 import StorePicture3 from '../components/TownStoreMainPage/store3.png';

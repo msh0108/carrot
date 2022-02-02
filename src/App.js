@@ -1,9 +1,9 @@
-import SignPage from "./pages/SignPage";
+import TownStoreDetailPage from "./pages/TownStoreDetailPage";
 
 function App() {
     return (
 		<>
-			<SignPage />
+			<TownStoreDetailPage />
         </>
     );
 }
