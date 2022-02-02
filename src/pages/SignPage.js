@@ -2,12 +2,13 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import firebase from "../../firebase";
+
 import styled from "styled-components";
 
 // 내부 파일
-import EasyLogin from "./EasyLogin";
-import Modal from "./Modal";
+import EasyLogin from "../components/LoginPage/EasyLogin";
+import Modal from "../components/LoginPage/Modal";
+import firebase from "../firebase";
 
 function SignPage() {
   const {
