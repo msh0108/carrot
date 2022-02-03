@@ -17,12 +17,14 @@ const StyledSectionTitle = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin: 1rem 0;
+	width: 100%;
 `;
 
 const LineDivider = styled.hr`
 	width: 100%;
 	border: 0;
 	border-top: 1px solid rgb(204, 204, 204);
+	margin: 1rem;
 `;
 
 const SectionLabel = styled.div`
