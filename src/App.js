@@ -1,16 +1,16 @@
 import SignPage from "./pages/SignPage";
-import Mypost from "./components/page/Mypost";
-import Top from "./components/page/Top";
-import Bottom from "./components/page/Bottom";
+import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
+import { Link } from "react-router-dom";
 
 function App() {
-    return (
+	return (
 		<>
-            <Top />
-			<Mypost />
-            <Bottom />
-        </>
-    );
+			<Link to="/town">TownPage</Link>
+			<Link to="/login">Login</Link>
+			<Link to="/mypage/sellbuyrecord">SellBuyRecord</Link>
+			<Link to="/mypage/region">SelectRegion</Link>
+		</>
+	);
 }
 
 export default App;
