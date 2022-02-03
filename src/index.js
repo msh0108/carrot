@@ -5,8 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
 import App from "./App";
-import TownPage from "./pages/TownPage"
+import TownPage from "./pages/TownPage";
 import LoginPage from "./pages/LoginPage";
+import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
+import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -15,6 +17,11 @@ ReactDOM.render(
 				<Route path="/" element={<App />} />
 				<Route path="/town" element={<TownPage />} />
 				<Route path="/login" element={<LoginPage />} />
+				<Route
+					path="/mypage/sellbuyrecord"
+					element={<SellBuyRecordPage />}
+				/>
+				<Route path="/mypage/region" element={<SelectRegion />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>,
