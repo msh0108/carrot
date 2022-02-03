@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Link, Router } from "react-router-dom";
+import { BrowserRouter, Link, NavigationType, Router } from "react-router-dom";
 import styled from "styled-components";
 
-import Bell from "./Bell";
+import Bell from "./page/Bell";
 
 function Top() {
   return (

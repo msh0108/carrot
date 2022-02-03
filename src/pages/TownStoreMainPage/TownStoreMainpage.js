@@ -1,31 +1,21 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 
-import Userdefault from '../components/TownStoreMainPage/userdefault.svg';
-import TownTop from '../components/TownStoreMainPage/TownTop.png';
-import Location from '../components/TownStoreMainPage/location.svg';
-import StorePicture1 from '../components/TownStoreMainPage/store1.png';
-import StorePicture2 from '../components/TownStoreMainPage/store2.png';
-import StorePicture3 from '../components/TownStoreMainPage/store3.png';
-import StorePicture4 from '../components/TownStoreMainPage/store4.svg';
-import StorePicture5 from '../components/TownStoreMainPage/store5.png';
-import StorePicture6 from '../components/TownStoreMainPage/store6.png';
-import StorePicture7 from '../components/TownStoreMainPage/store7.png';
-import StorePicture8 from '../components/TownStoreMainPage/store8.png';
-import PostscriptClick from '../components/TownStoreMainPage/PostscriptClick.png';
-
+import { keywords } from "../../Tests";
 
 function TownStoreMainPage() {
+    const data = keywords.animals.all;
+
     return (
       <TownStoreMainContainer>
           <TownStoreMiddleBox>
               <TownStoreMiddleBoxleft>
-                  <img src= {TownTop} />
+                  <img src= {keywords.animals.all[0].img} />
               </TownStoreMiddleBoxleft>
 
               <TownStoreMiddleBoxright>
                   <h1>
-                      <img src={Location} />
+                      {/* <img src={Location} /> */}
                       &nbsp; 내 근처에서 찾는<br />동네가게
                   </h1>
                   <h4>
@@ -37,9 +27,6 @@ function TownStoreMainPage() {
                     </h3>
                 </TownStoreMiddleBoxButton>
               </TownStoreMiddleBoxright>
-
-
-          
           </TownStoreMiddleBox>
           <TownStoreLastBox>
             <h1>우리동네 가게 소식</h1>
@@ -99,123 +86,15 @@ function TownStoreMainPage() {
             <TownStoreH3>
                 다양한 동네가게를 볼 수 있어요.
             </TownStoreH3>
-
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379688'>
-                    <img src={StorePicture1} />
-                    <h4>여성의류전문점</h4>
-                    <h5>지니샵</h5>
-                    <p>전라남도 영암군 삼호읍</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379690'>
-                    <img src={StorePicture2} />
-                    <h4>카페</h4>
-                    <h5>봉명동내커피</h5>
-                    <p>광주광역시 동구 금남로2가</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379692'>
-                    <img src={StorePicture3} />
-                    <h4>네일샵</h4>
-                    <h5>쌍촌동 다예네일</h5>
-                    <p>광주광역시 서구 쌍촌동</p>
-                    </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379697'>
-                    <img src={StorePicture4} />
-                    <h4>십자수/뜨개</h4>
-                    <h5>뜨개지니</h5>
-                    <p>경기도 양주시 만송동</p>
-                    </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379698'>
-                    <img src={StorePicture5} />
-                    <h4>일반중식점</h4>
-                    <h5>라땅쟈 마라탕</h5>
-                    <p>경기도 시흥시 정왕동</p>
-                    </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379700'>
-                    <img src={StorePicture6} />
-                    <h4>카페/디저트</h4>
-                    <h5>설빙장림점</h5>
-                    <p>부산광역시 사하구 장림동</p>
-                    </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379707'>
-                    <img src={StorePicture7} />
-                    <h4>가스설비</h4>
-                    <h5>경동나비엔 음성중앙점</h5>
-                    <p>충청북도 음성군 대소면</p>
-                    </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379897'>
-                    <img src={StorePicture8} />
-                    <h4>김치판매</h4>
-                    <h5>권여사김치찜</h5>
-                    <p>경기도 수원시 장안구 정자동</p>
-                    </a>
-            </TownStoreListDetail>
-
-            <TownStoreLastBoxButton>
-                <a href='https://town.daangn.com/'>
-                    <h3>
-                        내 동네 설정하고 우리동네 가게 찾기  &nbsp;
-                        <img src={PostscriptClick} />
-                    </h3>
-                </a>
-              </TownStoreLastBoxButton>
-
-          </TownStoreLastBox>
-
-
-          <TownStorePostscript>
-              <h2>동네주민의 진짜 후기를 찾아보세요.</h2>
-              <TownStorePostscriptDetail>
-                  <a href='https://town.daangn.com/bp/330711'>
-                    <img src={Userdefault} />
-                    <h4>대박살롱 님의 추천</h4>
-                    <TownStorePostscriptDetailText>
-                        <h4>밍스파</h4>
-                        <p>대전광역시 서구 둔산동</p>
-                        <h5>"엄마랑 커플마사지 받고 왔어요.. 다들 치절하시고 차근차근 잘해주셨어요!!"</h5>
-                    </TownStorePostscriptDetailText>
-                  </a>
-              </TownStorePostscriptDetail>
-              <TownStorePostscriptDetail>
-                  <a href='https://town.daangn.com/bp/977771'>
-                    <img src={Userdefault} />
-                    <h4>비우는중 님의 추천</h4>
-                    <TownStorePostscriptDetailText>
-                        <h4>카페하인츠 삼거리점</h4>
-                        <p>충청남도 천안시 동남구 청룡동</p>
-                        <h5>"쿠폰은 발급 했지만, 누구나 사용할 수 있는건 아니에요 문의등록 해야 사용하실 수 있어요!</h5>
-                    </TownStorePostscriptDetailText>
-                  </a>
-              </TownStorePostscriptDetail>
-              <TownStorePostscriptDetail>
-                  <a href='https://town.daangn.com/bp/330711'>
-                    <img src={Userdefault} />
-                    <h4>재정오빠 님의 추천</h4>
-                    <TownStorePostscriptDetailText>
-                        <h4>GO익스프레스</h4>
-                        <p>대전광역시 달서구 성당동</p>
-                        <h5>"♥♥ 일단 한 번 가보세요 ! ♥♥ "</h5>
-                    </TownStorePostscriptDetailText>
-                  </a>
-              </TownStorePostscriptDetail>
-          </TownStorePostscript>
-          <Nothing >
-              
-          </Nothing>
+                {data.map((item) => (
+                    <>
+                        <img href={item.img} />
+                        <p>{item.title}</p>
+                        <p>{item.cost}</p>
+                    </>))}
+                <Nothing >
+                </Nothing>
+            </TownStoreLastBox>
       </TownStoreMainContainer>
       
     );
