@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionLabel from "../../components/MyPage/SellBuyRecord/SectionLabel";
-import { animals, beauty } from "../../Tests";
+import { keywords } from "../../Tests"
 
 function SellBuyRecord() {
-	const sellRecordData = animals.all;
-	const buyRecordData = beauty.makeup;
+	const sellRecordData = keywords.animals.강아지;
+	const buyRecordData = keywords.beauty.makeup;
 
 	const [viewSell, setViewSell] = useState(true);
 	const [data, setData] = useState(sellRecordData);
