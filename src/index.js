@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -25,7 +26,13 @@ ReactDOM.render(
       )}
     >
       <BrowserRouter>
-        <App />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/town" element={<TownPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
+          <Route path="/mypage/region" element={<SelectRegion />} />
+        </Routes>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

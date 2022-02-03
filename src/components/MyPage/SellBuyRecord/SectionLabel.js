@@ -1,19 +1,25 @@
 import styled, { css } from "styled-components";
 
-function SectionLabel({ viewSell, setViewSell }) {
+function SectionLabel({ viewSell, setViewSell, changeData }) {
 	return (
 		<StyledSectionLabel>
 			<LineDivider />
 			<SectionFlex>
 				<LabelButton
 					isClicked={viewSell}
-					onClick={() => setViewSell(!viewSell)}
+					onClick={() => {
+						setViewSell(!viewSell);
+						changeData();
+					}}
 				>
 					판매내역
 				</LabelButton>
 				<LabelButton
 					isClicked={!viewSell}
-					onClick={() => setViewSell(!viewSell)}
+					onClick={() => {
+						setViewSell(!viewSell);
+						changeData();
+					}}
 				>
 					구매내역
 				</LabelButton>

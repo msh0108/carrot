@@ -99,3 +99,8 @@ const test = [
 		time: "6시간 전",
 	},
 ];
+
+
+const testCase = [
+	{}
+]
