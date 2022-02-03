@@ -42,9 +42,39 @@
       <p><input placeholder="가격(선택사항)" class="price"></input><label>가격제안받기</label><input type="checkbox"></input></p>
       <hr>
       <p><input class="text" type="text" placeholder="게시글 내용을 작성해주세요(가품 및 판매금지품목은 게시가 제한될 수 있어요.)"></p>
-      <hr>
+      <hr>  
       <p id="post-img"><label for="input_button"><img src="plus.svg">&nbsp;자주 쓰는 문구</label></p>
-      <p><input type="button" id="input_button" style="display:none"></p>
+      <p><input type="button" id="input_button" onclick="javascript:goDetail('테스트');" style="display:none"></input></p>
+      <div style="height: 1000px"></div>
+      <!-- 팝업뜰때 배경 -->
+      <div id="PopupMask">
+        <!--Popup Start -->
+        <div id="Popup" class="LayerPopup" style="width: 700px; height: 350px">
+          <article class="layerpop">
+            <div class="PopupTitle">게시글에 쓰고 싶은 문구를 선택해주세요.</div>
+            <a
+          href="javascript:popupClose();"
+          class="layerpop_close"
+        ></a>
+        <br />
+        <div class="PopupContent">
+          <p>
+          자주 쓰는 문구를 저장해보세요<br />
+          예) 직거래는 강화문 앞에서 가능해요!
+        </p>
+        
+        </div>
+        <hr>
+        <div class="PopupText">
+          <p>
+          <input type="text" placeholder="문구를 입력해주세요">
+          <input type="submit" value="추가">
+        </p>
+        </div>
+          </article>
+        </div>
+      </div>
+          <!--Popup End -->
       <hr>
       <p id="post"><input class="post" type="submit" value="등록"></input></p>
     </form>
