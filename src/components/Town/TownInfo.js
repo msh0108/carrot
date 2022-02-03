@@ -140,3 +140,8 @@ const test = [
 	},
 	
 ];
+
+
+const testCase = [
+	{}
+]
