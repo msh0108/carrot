@@ -1,33 +1,131 @@
 body {
-  margin:0px;
-}
-
-
-table {
-  margin 0px;
-  border-style: hidden;
-}
-
-td {
-  border-top-style: hidden;
-  border-left-style: hidden;
-  border-right-style: hidden;
-}
-
-button {
-  margin-right: 0px;
-  width: 120px;
-  height: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  border-radius: 10%;
 }
 
-button p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+hr {
+  border: solid 1px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+b {
+  font-size: 25px;
+}
+
+fieldset {
+  border: hidden;
+  width: 600px;
+  height: auto;
+}
+
+#camera img {
+  width: 30px;
+  height: 30px;
+}
+#camera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(165, 165, 165);
+  width: 80px;
+  height: 80px;
+}
+
+.title {
+  border: hidden;
+  height: 30px;
+  width: 600px;
+}
+select {
+  border: hidden;
+  height: 30px;
+  width: 600px;
+}
+
+.price {
+  border: hidden;
+  height: 30px;
+  width: 480px;
+}
+
+.text {
+  border: hidden;
+  height: 700px;
+  width: 600px;
+}
+
+#post {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+input,
+select:focus {
+  outline: none;
+}
+
+.post {
+  border: none;
+  width: 100px;
+  height: 30px;
+  background-color: #ff5e00;
+  color: white;
+  font-size: 15px;
+  border-radius: 1vh;
+}
+
+#post-img img {
+  width: 13px;
+  height: 13px;
+}
+
+/*-- POPUP common style S ======================================================================================================================== --*/
+#PopupMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: #000000;
+  display: none;
+}
+
+.LayerPopup {
+  display: none;
+  z-index: 1000;
+  border: 2px solid #ccc;
+  background: #fff;
+  cursor: move;
+}
+
+.LayerPopup_area .title {
+  padding: 10px 10px 10px 10px;
+  border: 0px solid #aaaaaa;
+  background: #f1f1f1;
+  color: #3eb0ce;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.LayerPopup_area .LayerPopup_close {
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent url("btn_exit_off.png") no-repeat;
+}
+
+.LayerPopup_area .LayerPopup_close:hover {
+  background: transparent url("btn_exit_on.png") no-repeat;
+  cursor: pointer;
+}
+
+.LayerPopup_area .content {
+  width: 96%;
+  margin: 2%;
+  color: #828282;
 }
