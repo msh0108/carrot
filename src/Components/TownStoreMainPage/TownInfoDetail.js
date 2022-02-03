@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 
 
-import Market from '../components/TownStoreDetailPage/Market.svg';
-import Phone from '../components/TownStoreDetailPage/Phone.svg';
-import Location from '../components/TownStoreDetailPage/Location.svg';
-import Clock from '../components/TownStoreDetailPage/Clock.svg';
-import Mapsample from '../components/TownStoreDetailPage/Mapsample.png';
-import TownInfoCard from "../components/Town/TownInfoCard";
+import Market from '../TownStoreDetailPage/Market.svg';
+import Phone from '../TownStoreDetailPage/Phone.svg';
+import Location from '../TownStoreDetailPage/Location.svg';
+import Clock from '../TownStoreDetailPage/Clock.svg';
+import Mapsample from '../TownStoreDetailPage/Mapsample.png';
+import TownInfoCard from "../Town/TownInfoCard";
 
 
 
-function TownStoreDetailPage() {
+function TownInfoDetail() {
 
     const [Customer, Customers] = useState(0);
 
@@ -73,7 +73,7 @@ function TownStoreDetailPage() {
     );
   }
   
-  export default TownStoreDetailPage;
+  export default TownInfoDetail;
 
 
 

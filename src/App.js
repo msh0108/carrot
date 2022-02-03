@@ -1,9 +1,9 @@
-import TownStoreDetailPage from "./pages/TownStoreDetailPage";
+import TownStoreMainPage from "./pages/TownStoreMainPage";
 
 function App() {
     return (
 		<>
-			<TownStoreDetailPage />
+			<TownStoreMainPage />
         </>
     );
 }
