@@ -15,7 +15,9 @@ import StorePicture8 from '../components/TownStoreMainPage/store8.png';
 import PostscriptClick from '../components/TownStoreMainPage/PostscriptClick.png';
 
 
+
 function TownStoreMainPage() {
+     const data = keywords.animals.all;
     return (
       <TownStoreMainContainer>
           <TownStoreMiddleBox>
@@ -99,7 +101,7 @@ function TownStoreMainPage() {
             <TownStoreH3>
                 다양한 동네가게를 볼 수 있어요.
             </TownStoreH3>
-
+            {data.map}
             <TownStoreListDetail>
                 <a href='https://town.daangn.com/bp/1379688'>
                     <img src={StorePicture1} />

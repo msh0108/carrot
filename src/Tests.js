@@ -1,3 +1,4 @@
+//키워드에 따른 거래매물 정보
 export const keywords = {
 	animals: {
 		name: "반려동물용품",
@@ -4972,6 +4973,7 @@ export const keywords = {
 	},
 };
 
+//지역에 따른 우리동네 정보
 export const regions = {
 	Gangbuk: {
 		"강북구 삼양동": [

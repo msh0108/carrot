@@ -9,6 +9,7 @@ import TownPage from "./pages/TownPage";
 import LoginPage from "./pages/LoginPage";
 import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
 import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
+import FAQPage from "./pages/FAQPage";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
 					element={<SellBuyRecordPage />}
 				/>
 				<Route path="/mypage/region" element={<SelectRegion />} />
+				<Route path="/faq" element={<FAQPage />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>,
