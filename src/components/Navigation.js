@@ -7,7 +7,7 @@ import Bell from "./Bell";
 function Navigation() {
   return (
   <StyledNavigation>
-   <Header>
+   <Top>
      <Top_head>
         <Link to = "/">
           <img src="img/main_logo.png" alt="메인로고" className='mainlogo' />
@@ -29,7 +29,7 @@ function Navigation() {
             </ul>
         </Top_menu>
      </Top_head>
-   </Header> 
+   </Top> 
   </StyledNavigation>
   );
 }
@@ -47,7 +47,7 @@ ul,li{
   float:left; 
 }
 `;
-const Header = styled.header`
+const Top = styled.header`
   height:100px;
   border-bottom:1px solid #b4b9be;
 `;
