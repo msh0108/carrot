@@ -42,7 +42,6 @@ function EasyLogin() {
       target: { name },
     } = event;
     let provider;
-    
       if (name === "google") {
         provider = new GoogleAuthProvider();
         const result = await signInWithPopup(authService.provider);
