@@ -168,18 +168,14 @@ const TownStoreLastBox = styled.div`
     }
 `;
 
-
-
-
-
 const TownStoretitleList = styled.div`
     width: 1440px;
     height: 100px ;
     margin-top: 24px;
     margin-left: 16px;
     display: flex;
-    justify-content: space-around
-    align-items:end
+    justify-content: space-around;
+    align-items: end;
 `;
 
 
