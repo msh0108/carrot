@@ -7,7 +7,7 @@ import TownStoreMainPage from "./pages/TownStoreMainPage";
 function App() {
 	return (
 		<>
-			< TownStoreMainPage />
+			{/* < TownStoreMainPage /> */}
 			<Link to="/town">TownStoreMainPage</Link>
 			<Link to="/login">Login</Link>
 			<Link to="/mypage/sellbuyrecord">SellBuyRecord</Link>
