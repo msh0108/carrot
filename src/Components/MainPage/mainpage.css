@@ -75,18 +75,6 @@ body {
   padding: 8px 12px;
 }
 
-img {
-  width: 40px;
-  height: 40px;
-
-  margin-right: 0px;
-}
-
-a {
-  color: black;
-  text-decoration-line: none;
-}
-
 #thirdbox {
   width: auto;
   height: 600px;
@@ -198,4 +186,15 @@ a {
 }
 strong {
   font-size: 23px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+
+  margin-right: 0px;
+}
+a {
+  color: black;
+  text-decoration-line: none;
 }
