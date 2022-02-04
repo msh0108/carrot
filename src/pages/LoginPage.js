@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import EasyLogin from "../components/Login/EasyLogin";
 
 function LoginPage() {
 	const [id, setId] = useState("");
@@ -52,7 +51,6 @@ function LoginPage() {
 							</li>
 						</ul>
 					</UserInfoHelp>
-					<EasyLogin />
 				</UserWrapBox>
 			</JoinBox>
 		</div>
