@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-<<<<<<< HEAD:src/Components/Town/TownInfoBox.js
 import TownTop from '../../../public/img/Town/TownTop.png';
-=======
-import TownTop from "./TownTop.png";
->>>>>>> 2be4b0fdbfa5eed3007558bddcb52bbad6c41af7:src/Components/TownStoreMainPage/TownInfoBox.js
 
 // 연희님
 import TownInfo from "./TownInfo";

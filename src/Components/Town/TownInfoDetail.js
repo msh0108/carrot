@@ -1,21 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-<<<<<<< HEAD:src/Components/Town/TownInfoDetail.js
 import Market from '../../../public/img/Town/Market.svg';
 import Phone from '../../../public/img/Town/Phone.svg';
 import Location from '../../../public/img/Town/Location.svg';
 import Clock from '../../../public/img/Town/Clock.svg';
 import Mapsample from '../../../public/img/Town/Mapsample.png';
 import TownInfoCard from "./TownInfoCard";
-=======
-import Market from "../TownStoreDetailPage/Market.svg";
-import Phone from "../TownStoreDetailPage/Phone.svg";
-import Location from "../TownStoreDetailPage/Location.svg";
-import Clock from "../TownStoreDetailPage/Clock.svg";
-import Mapsample from "../TownStoreDetailPage/Mapsample.png";
-import TownInfoCard from "../Town/TownInfoCard";
->>>>>>> 2be4b0fdbfa5eed3007558bddcb52bbad6c41af7:src/Components/TownStoreMainPage/TownInfoDetail.js
 
 function TownInfoDetail() {
   const [Customer, Customers] = useState(0);
