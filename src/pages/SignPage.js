@@ -1,298 +1,247 @@
 // 외부 파일
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
 import styled from "styled-components";
 
 // 내부 파일
-import EasyLogin from "../components/Login/EasyLogin";
-import Modal from "../components/Login/Modal";
+import EasyLogin from "../components/LoginPage/EasyLogin";
+import Modal from "../components/LoginPage/Modal";
+import firebase from "../firebase";
 
 function SignPage() {
-	// 이름, 이메일, 비밀번호, 비밀번호, 동의여부 확인
-	const [id, setId] = useState("");
-	const [password, setPassword] = useState("");
-	const [email, setEmail] = useState("");
-	const [term, setTerm] = useState(false);
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-	// 오류메시지 상태 저장
-	const [passwordMessage, setPasswordMessage] = useState("");
-	const [emailMessage, setEmailMessage] = useState("");
-	const [termError, setTermError] = useState(false);
+  const password = useRef();
+  password.current = watch("password");
 
-	// 유효성 검사
-	const [isId, setIsId] = useState(false);
-	const [isPassword, setIsPassword] = useState(false);
-	const [passwordCheck, setPasswordCheck] = useState("");
-	const [passwordError, setPasswordError] = useState(false);
-	const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
-	const [isEmail, setIsEmail] = useState(false);
+  const [errorFromSubmit, setErrorFromSubmit] = useState("");
+  const [loading, setLoading] = useState(false);
 
-	////////////////////
-	const onSubmit = (event) => {
-		event.preventDefault();
-		/** 검증 로직
-		 *  비밀번호와 비밀번호 체크가 다른경우
-		 * 약관 동의여부
-		 */
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      // user정보인 email과 password를 기본 정보로 firebase에 보냄.
+      let createdUser = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(data.email, data.password);
+      console.log("createdUser", createdUser);
 
-		if (password !== passwordCheck) {
-			return setPasswordError(true);
-		}
-		if (!term) {
-			return setTermError(true);
-		}
-		console.log({
-			id,
-			password,
-			passwordCheck,
-			term,
-		});
-	};
-	const onChangeId = (event) => {
-		setId(event.target.value);
-	};
-	const onChangePassword = (event) => {
-		const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,25}$/;
-		const passwordCurrent = event.target.value;
-		setPassword(passwordCurrent);
+      await createdUser.user.updateProfile({
+        displayName: data.name,
+      });
 
-		if (!passwordRegex.test(passwordCurrent)) {
-			setPasswordMessage(
-				"숫자+영문자 조합으로 10자리 이상 입력해주세요!"
-			);
-			setIsPassword(false);
-		} else {
-			setPasswordMessage("안전한 비밀번호입니다.");
-			setIsPassword(true);
-		}
-	};
-	const onChangePasswordCheck = (event) => {
-		// 패스워드 일치여부 검사
-		setPasswordError(event.target.value !== password);
-		setPasswordCheck(event.target.value);
-	};
-	const onChangeTerm = (event) => {
-		// 체크박스 초기화
-		setTermError(false);
-		setTerm(event.target.checked);
-	};
-	const onChangeEmail = (event) => {
-		const emailRegex =
-			/([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-		const emailCurrent = event.target.value;
-		setEmail(emailCurrent);
+      //Firebase 데이터베이스에 저장하기
 
-		if (!emailRegex.test(emailCurrent)) {
-			setEmailMessage("이메일 형식이 틀렸습니다. 다시 확인해주세요.");
-			setIsEmail(false);
-		} else {
-			setEmailMessage("올바른 이메일 형식입니다");
-			setIsEmail(true);
-		}
-	};
+      await firebase.database().ref("users").child(createdUser.user.uid).set({
+        name: createdUser.user.displayName,
+      });
 
-	// 모달창
-	const [modalOpen, setModalOpen] = useState(false);
+      setLoading(false);
+    } catch (error) {
+      setErrorFromSubmit(error.message);
+      setLoading(false);
+      setTimeout(() => {
+        setErrorFromSubmit("");
+      }, 5000);
+    }
+  };
+  // 동의여부확인
+  const [term, setTerm] = useState(false);
+  // 오류메시지 상태저장
+  const [termError, setTermError] = useState(false);
 
-	const openModal = () => {
-		setModalOpen(true);
-	};
-	const closeModal = () => {
-		setModalOpen(false);
-	};
-	// 버튼
+  const onChangeTerm = (event) => {
+    // 체크박스 초기화
+    setTermError(false);
+    setTerm(event.target.checked);
+  };
 
-	return (
-		<>
-			<EasyLogin />
-			<JoinInputWrap onSubmit={onSubmit}>
-				<div className="joinForm">
-					<Label htmlFor="userId">아이디</Label>
-					<br />
-					<Input
-						name="userId"
-						type="text"
-						placeholder="아이디입력"
-						required
-						onChange={onChangeId}
-					/>
-				</div>
-				<div>
-					<Label htmlFor="userPassword">비밀번호</Label>
-					<br />
-					<Input
-						name="userPassword"
-						type="password"
-						placeholder="영문과 숫자 포함하여 10자리 이상"
-						required
-						onChange={onChangePassword}
-					/>
-					{password.length > 0 && (
-						<span
-							className={`message ${
-								isPassword ? "success" : "error"
-							}`}
-						>
-							{passwordMessage}
-						</span>
-					)}
-					<Input
-						name="userPasswordCheck"
-						type="password"
-						placeholder="비밀번호 확인"
-						required
-						onChange={onChangePasswordCheck}
-					/>
-					{passwordError && (
-						<div style={{ color: "red" }}>
-							비밀번호가 일치하지 않습니다
-						</div>
-					)}
-				</div>
-				<div>
-					<Label htmlFor="userEmail">이메일</Label>
-					<Input
-						onChange={onChangeEmail}
-						name="userEmail"
-						type="email"
-						placeholder="이메일 입력"
-						required
-					/>
-					{email.length > 0 && (
-						<span
-							className={`message ${
-								isEmail ? "success" : "error"
-							}`}
-						>
-							{emailMessage}
-						</span>
-					)}
-				</div>
-				<div style={{ float: "left", textAlign: "left" }}>
-					<CheckInput
-						type="checkbox"
-						value={term}
-						onChange={onChangeTerm}
-						onClick={openModal}
-					/>
-					<Modal
-						open={modalOpen}
-						close={closeModal}
-						header="약관확인"
-					></Modal>
-					<CheckLabel>개인정보 수집 이용동의(필수)</CheckLabel>
-					{termError && (
-						<div style={{ color: "red" }}>
-							약관에 동의하셔야 합니다
-						</div>
-					)}
-					<br />
-					<CheckInput
-						type="checkbox"
-						value={term}
-						onChange={onChangeTerm}
-						onClick={openModal}
-					/>
-					{/* <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal> */}
-					<CheckLabel>
-						당근마켓 <i>이용약관</i>(필수)
-					</CheckLabel>
-					{termError && (
-						<div style={{ color: "red" }}>
-							약관에 동의하셔야 합니다
-						</div>
-					)}
-					<br />
-					<CheckInput
-						type="checkbox"
-						id="checked"
-						onChange={onChangeTerm}
-						onClick={openModal}
-					/>
-					{/* <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal> */}
-					<CheckLabel hrmlFor="checked">
-						마케팅 활용 및 광고성 정보 수신 동의(선택)
-					</CheckLabel>
-					<br />
-					<CheckInput
-						type="checkbox"
-						value={term}
-						onChange={onChangeTerm}
-						onClick={openModal}
-					/>
-					{/* <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal> */}
-					<CheckLabel>만 14세 미만 가입 제한(필수)</CheckLabel>
-					{termError && (
-						<div style={{ color: "red" }}>
-							약관에 동의하셔야 합니다
-						</div>
-					)}
-				</div>
-				<div>
-					<JoinButton
-						type="submit"
-						disabled={
-							!(
-								isId &&
-								isEmail &&
-								isPassword &&
-								isPasswordConfirm
-							)
-						}
-					>
-						가입하기
-					</JoinButton>
-				</div>
-			</JoinInputWrap>
-		</>
-	);
+  // 모달창
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+  // 버튼
+
+  return (
+    <>
+      <EasyLogin />
+      <RegisterInputWrap>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label htmlFor="email">이메일</label>
+          <RegisterInput
+            name="email"
+            type="email"
+            id="email"
+            placeholder="이메일주소를 입력해주세요."
+            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+          />
+          {errors.email && <p>메일주소를 입력해주세요.</p>}
+          <label htmlFor="name">이름</label>
+          <RegisterInput
+            name="name"
+            type="text"
+            id="name"
+            placeholder="이름을 입력해주세요."
+            {...register("name", { required: true, maxLength: 10 })}
+          />
+          {errors.name && errors.name.type === "required" && (
+            <p>필수입력항목입니다.</p>
+          )}
+          {errors.name && errors.name.type === "maxLength" && (
+            <p>10글자 미만으로 작성해주세요.</p>
+          )}
+          <label htmlFor="password">비밀번호</label>
+          <RegisterInput
+            name="password"
+            type="password"
+            id="password"
+            placeholder="영문과 숫자, 특수문자를 포함한 10자리 이상"
+            {...register("password", {
+              required: true,
+              minLength: 10,
+              maxLength: 25,
+              pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{10,}$/,
+              validate: (value) => value === watch("password"),
+            })}
+          />
+          {errors.password && errors.password.type === "required" && (
+            <p>비밀번호를 입력해주세요.</p>
+          )}
+          {errors.password && errors.password.minLength === "minLength" && (
+            <p>최소 10자 이상 적어주세요.</p>
+          )}
+          {errors.password && errors.password.maxLength === "MaxLength" && (
+            <p>최대 25자 이하로 적어주세요.</p>
+          )}
+          {errors.password && errors.password.type === "pattern" && (
+            <p>특수문자를 포함해주세요.</p>
+          )}
+          <label htmlFor="password_confirm">비밀번호 확인</label>
+          <RegisterInput
+            name="password_confirm"
+            type="password"
+            id="password_confirm"
+            placeholder="비밀번호를 다시 한 번 입력해주세요."
+            {...register("password_confirm", {
+              required: true,
+              validate: (value) => value === password.current,
+            })}
+          />
+          {errors.password_confirm && errors.password.type === "required" && (
+            <p>비밀번호를 확인해주세요.</p>
+          )}
+          {errors.password_confirm &&
+            errors.password_confirm.type === "validate" && (
+              <p>비밀번호가 일치하지 않습니다.</p>
+            )}
+          {errorFromSubmit && <p>{errorFromSubmit}</p>}
+          <h3>약관동의</h3>
+          <CheckInput
+            type="checkbox"
+            value={term}
+            onChange={onChangeTerm}
+            onClick={openModal}
+          />
+          <Modal open={modalOpen} close={closeModal}></Modal>
+          <CheckLabel>개인정보 수집 이용동의(필수)</CheckLabel>
+          <br />
+          <CheckInput
+            type="checkbox"
+            value={term}
+            onChange={onChangeTerm}
+            onClick={openModal}
+          />
+          <Modal open={modalOpen} close={closeModal}></Modal>
+          <CheckLabel>
+            당근마켓<span>이용약관</span>(필수)
+          </CheckLabel>
+          <br />
+          <CheckInput
+            type="checkbox"
+            value={term}
+            onChange={onChangeTerm}
+            onClick={openModal}
+          />
+          <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal>
+          <CheckLabel>마케팅 활용 및 광고성 정보 수신 동의(선택)</CheckLabel>
+          <br />
+          <CheckInput
+            type="checkbox"
+            value={term}
+            onChange={onChangeTerm}
+            onClick={openModal}
+          />
+          <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal>
+          <CheckLabel>만 14세 미만 가입 제한(필수)</CheckLabel>
+          <br />
+          <RegisterButton type="submit" disabled={loading} />
+          <Link style={{ color: "gray", textDecoration: "none" }} to="login">
+            로그인바로가기
+          </Link>
+        </form>
+      </RegisterInputWrap>
+    </>
+  );
 }
 
 export default SignPage;
 
-const JoinInputWrap = styled.div`
-	margin: 0 auto;
-	padding: 5vh;
-	width: 80%;
-	height: auto;
-	// overflow: hidden;
+const RegisterInputWrap = styled.div`
+  margin: 0 auto;
+  padding: 5rem;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
 `;
-const Input = styled.input`
-	margin-bottom: 10px;
-	padding-left: 10px;
-	width: 100%;
-	height: 5vh;
-	border: 1px solid #c4c4c4;
-	border-radius: 10px;
-	&:focus {
-		border: none;
-		outline: 1px solid #f04124;
-	}
+const RegisterInput = styled.input`
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #c4c4c4;
+  border-radius: 1rem;
+  font-size: 1rem;
+  &:focus {
+    border: none;
+    outline: 1px solid #f04124;
+  }
 `;
-const Label = styled.label`
-	float: left;
-	font-weight: bold;
-	padding-bottom: 1.5vh;
-`;
-const JoinButton = styled.button`
-	width: 100%;
-	margin-top: 20px;
-	padding: 15px;
-	color: #fff;
-	font-size: 2vh;
-	background-color: #f04124;
-	border-radius: 10px;
+const RegisterButton = styled.input`
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid #f04124;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f04124;
+  font-weight: bold;
 `;
 const CheckInput = styled.input`
-	display: inline-block;
-	margin: 0 auto;
-	padding-botton: 30px;
-	float: left;
-	position: relative;
-	top: 8px;
+  display: inline-block;
+  margin: 0 auto;
+  padding-botton: 3rem;
+  float: left;
+  position: relative;
+  top: 0.8rem;
 `;
 const CheckLabel = styled.label`
-	position: relative;
-	top: -1.5px;
-	left: 10px;
-	line-height: 200%;
+  position: relative;
+  top: -1.5px;
+  left: 1rem;
+  line-height: 200%;
 `;

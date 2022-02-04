@@ -2,8 +2,13 @@
 import styled from "styled-components";
 
 // 내부
+<<<<<<< HEAD
 import FAQContentBox from "../components/FAQ/FAQContentBox";
 import HelpBox from "../components/FAQ/HelpBox";
+=======
+import FAQContentBox from "../../components/FAQ/FAQContentBox";
+import HelpBox from "../../components/FAQ/HelpBox";
+>>>>>>> 8bb7707323e51837dbf71f61a122cd42da079ef6
 
 function FAQPage() {
 	return (

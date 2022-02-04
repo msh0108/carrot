@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+
 
 function ProductCard({ product }) {
 	const [clickEmoticon, setClickEmoticon] = useState(false);
+	const navigate = useNavigate();
 
 	return (
-		<StyledProductCard>
+		<StyledProductCard onClick={() => navigate("/")}>
 			<ProductImage src={product.img} />
 			<p className="productTitle">{product.title}</p>
 			<p className="productCost">{product.cost}</p>

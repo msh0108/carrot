@@ -2,32 +2,46 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import promiseMiddleware from "redux-promise";
+import ReduxThunk from "redux-thunk";
+import Reducer from "./redux/reducers";
 
-import "./index.css";
-import App from "./App";
 import TownPage from "./pages/TownPage";
 import LoginPage from "./pages/LoginPage";
 import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
 import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
-import FAQPage from "./pages/FAQPage";
+import SignPage from "./pages/SignPage";
+import App from "./App";
+
+const createStoreWithMiddleware = applyMiddleware(
+  promiseMiddleware,
+  ReduxThunk
+)(createStore);
 
 ReactDOM.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/town" element={<TownPage />} />
-				<Route path="/login" element={<LoginPage />} />
-				<Route
-					path="/mypage/sellbuyrecord"
-					element={<SellBuyRecordPage />}
-				/>
-				<Route path="/mypage/region" element={<SelectRegion />} />
-				<Route path="/faq" element={<FAQPage />} />
-			</Routes>
-		</BrowserRouter>
-	</React.StrictMode>,
-	document.getElementById("root")
+  <React.StrictMode>
+    <Provider
+      store={createStoreWithMiddleware(
+        Reducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      )}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/town" element={<TownPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
+          <Route path="/mypage/region" element={<SelectRegion />} />
+          <Route path="/sign" element={<SignPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

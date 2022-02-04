@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard"
 
 function ProductGrid({ productData }) {
+
 	return (
 		<StyledProductGrid>
-			{productData.map((product, index) => (
-				<ProductCard key={index} product={product} />
+			{productData.map((product) => (
+				<ProductCard key={product.href} product={product} />
 			))}
 		</StyledProductGrid>
 	);

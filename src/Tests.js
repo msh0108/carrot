@@ -1,4 +1,4 @@
-//키워드에 따른 거래매물 정보
+//키뭐드에 따른 거래매물 정보
 export const keywords = {
 	animals: {
 		name: "반려동물용품",
