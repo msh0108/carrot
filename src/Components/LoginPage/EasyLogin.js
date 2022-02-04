@@ -1,9 +1,18 @@
 // 외부
 import styled from "styled-components";
 import KakaoLogin from "react-kakao-login";
+import firebase from "firebase/compat/auth";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "@firebase/auth";
 
 // 내부
 import kakaoLogin from "../RegisterPage/kakaoLogin";
+import { firebaseInstance } from "../../firebase";
 
 function EasyLogin() {
   //   responseKaKao = (res) => {
@@ -28,6 +37,24 @@ function EasyLogin() {
   //       );
   //   };
 
+  const onSocialClick = async (event) => {
+    const {
+      target: { name },
+    } = event;
+    let provider;
+    
+      if (name === "google") {
+        provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(authService.provider);
+        // const token = credential.accessToken;
+      } else if (name === "facebook") {
+        provider = new FacebookAuthProvider();
+        const result = await signInWithPopup(authService.provider);
+        const credential = FacebookAuthProvidercredentialFromResult(result);
+        // const token = credential.accessToken;
+      }
+    }
+  };
   return (
     <EasyLoginWrap>
       <Title>
@@ -46,6 +73,9 @@ function EasyLogin() {
           getProfile={true}
         />
       </LoginBtnWrap>
+      <button onClick={onSocialClick} name="google">
+        Google
+      </button>
     </EasyLoginWrap>
   );
 }

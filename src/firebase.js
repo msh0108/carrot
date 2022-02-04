@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
@@ -12,15 +12,19 @@ import "firebase/compat/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB1E4b8RcpusOtY5fTpmN5n8TStVcbU8bs",
-  authDomain: "carrot-3086e.firebaseapp.com",
-  projectId: "carrot-3086e",
-  storageBucket: "carrot-3086e.appspot.com",
-  messagingSenderId: "761166877177",
-  appId: "1:761166877177:web:4531687ba1995ad24aed28",
+  apiKey: "AIzaSyDzGnhAWWP9oac-Mnay0VvSrscYZ-FyIfA",
+  authDomain: "react-firebase-app-1faf4.firebaseapp.com",
+  databaseURL: "https://react-firebase-app-1faf4-default-rtdb.firebaseio.com",
+  projectId: "react-firebase-app-1faf4",
+  storageBucket: "react-firebase-app-1faf4.appspot.com",
+  messagingSenderId: "181629495403",
+  appId: "1:181629495403:web:a796db5dd9c52004eb692e",
 };
 
 // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
-const app = initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+export const firebaseInstance = firebase;
+
 export default firebase;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import firebase from "../../firebase";
+import firebase from "../firebase";
 import styled from "styled-components";
 
 function LoginPage() {
