@@ -4,10 +4,9 @@ import styled from "styled-components";
 
 import Bell from "./Bell";
 
-function Top() {
+function Navigation() {
   return (
-  <BrowserRouter>
-  <Body>
+  <StyledNavigation>
    <Header>
      <Top_head>
         <Link to = "/">
@@ -31,16 +30,16 @@ function Top() {
         </Top_menu>
      </Top_head>
    </Header> 
-  </Body>
-  </BrowserRouter>
+  </StyledNavigation>
   );
 }
 
-const Body = styled.body`
+export default Navigation;
+
+const StyledNavigation = styled.body`
   margin: 0;
   padding: 0;
   background-color: #fff;
-  // min-width:1920px;
   font-family:'Nanum Gothic', sans-serif; 
   color:#333333;
 ul,li{
@@ -152,6 +151,6 @@ justify-content: center;
  }
 `;
 
-export default Top;
+
 
 
