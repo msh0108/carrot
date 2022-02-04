@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 import TownInfoCard from "./TownInfoCard";
-import TownInfoDetail from "../TownStoreMainPage/TownInfoDetail";
+import TownInfoDetail from "./TownInfoDetail";
 
 
 function TownInfo() {
