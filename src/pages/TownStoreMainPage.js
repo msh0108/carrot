@@ -15,16 +15,11 @@ function TownStoreMainPage() {
     
 
     return (
-
         <TownStoreMainContainer>
-            <Top></Top>
-            <TownInfoBox>
-
-            </TownInfoBox>
-
+            <Top />
+            <TownInfoBox />
             <TownStoreInfoBox />
             <TownPostscript />
-
             <Nothing />
 
         </TownStoreMainContainer>

@@ -10,23 +10,19 @@ import LoginPage from "./pages/LoginPage";
 import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
 import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
 
-
 ReactDOM.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/town" element={<TownStoreMainPage />} />
-				<Route path="/login" element={<LoginPage />} />
-				<Route
-					path="/mypage/sellbuyrecord"
-					element={<SellBuyRecordPage />}
-				/>
-				<Route path="/mypage/region" element={<SelectRegion />} />
-			</Routes>
-		</BrowserRouter>
-	</React.StrictMode>,
-	document.getElementById("root")
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/town" element={<TownStoreMainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
+        <Route path="/mypage/region" element={<SelectRegion />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
