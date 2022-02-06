@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 
-import StorePicture1 from '../../../public/img/Town/store1.png';
-import StorePicture2 from '../../../public/img/Town/store2.png';
-import StorePicture3 from '../../../public/img/Town/store3.png';
-import StorePicture4 from '../../../public/img/Town/store4.svg';
-import StorePicture5 from '../../../public/img/Town/store5.png';
-import StorePicture6 from '../../../public/img/Town/store6.png';
-import StorePicture7 from '../../../public/img/Town/store7.png';
-import StorePicture8 from '../../../public/img/Town/store8.png';
-import PostscriptClick from '../../../public/img/Town/PostscriptClick.png';
+import StorePicture2 from '../../Img/Town/store2.png';
+import StorePicture3 from '../../Img/Town/store3.png';
+import StorePicture8 from '../../Img/Town/store8.png';
+import StorePicture4 from '../../Img/Town/store4.svg';
+import StorePicture5 from '../../Img/Town/store5.png';
+import StorePicture6 from '../../Img/Town/store6.png';
+import StorePicture1 from '../../Img/Town/store1.png';
+import StorePicture7 from '../../Img/Town/store7.png';
+import PostscriptClick from '../../Img/Town/PostscriptClick.png';
 
 function TownStoreInfoBox() {
     return (
@@ -221,6 +221,7 @@ const TownStoreListDetail = styled.div`
 
     a{
         text-decoration: none;
+        color : black;
     }
     
     a:visited{

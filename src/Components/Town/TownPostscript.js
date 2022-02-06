@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 
-import Userdefault from '../../../public/img/Town/userdefault.svg';
+import Userdefault from '../../Img/Town/userdefault.svg';
 
 function TownPostscript() {
     return (
@@ -68,6 +68,7 @@ const TownStorePostscriptDetail = styled.div`
 
     a{
         text-decoration: none;
+        color : black;
     }
     
     a:visited{

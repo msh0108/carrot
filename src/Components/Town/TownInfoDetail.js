@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import Market from '../../../public/img/Town/Market.svg';
-import Phone from '../../../public/img/Town/Phone.svg';
-import Location from '../../../public/img/Town/Location.svg';
-import Clock from '../../../public/img/Town/Clock.svg';
-import Mapsample from '../../../public/img/Town/Mapsample.png';
-import TownInfoCard from "./TownInfoCard";
+import Market from '../../Img/Town/Market.svg';
+import Phone from '../../Img/Town/Phone.svg';
+import Location from '../../Img/Town/Location.svg';
+import Clock from '../../Img/Town/Clock.svg';
+import Mapsample from '../../Img/Town/Mapsample.png';
+// import TownInfoCard from "./TownInfoCard";
 
 function TownInfoDetail() {
   const [Customer, Customers] = useState(0);
@@ -77,7 +77,7 @@ const TownStoreDetailPageBox = styled.div`
 const TownStoreDetailpageContainer = styled.div`
   border: 1px solid black;
   background: white;
-  margin: 200px auto;
+  margin: 200px auto 0 auto;
   width: 800px;
   height: 1200px;
 `;
