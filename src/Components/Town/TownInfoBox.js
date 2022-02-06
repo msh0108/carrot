@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import TownTop from '../../../public/img/Town/TownTop.png';
+import TownTop from '../../Img/Town/TownTop.png';
 
 // 연희님
 import TownInfo from "./TownInfo";

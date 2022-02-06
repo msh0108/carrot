@@ -8,7 +8,7 @@ import TownPostscript from '../components/Town/TownPostscript'
 
 
 // 승혁님
-import Top from "../components/Top";
+// import Top from "../components/Top";
 
 
 function TownMainPage() {
